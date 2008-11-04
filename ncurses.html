@@ -88,9 +88,9 @@ New features and improvements:
 		    it simpler to tell if the extended functions and/or colors
 		    are declared.
 
-		<li>add wresize() to C++ binding 
+		<li>add <code>wresize</code> to C++ binding 
 
-		<li>eliminate fixed-buffer vsprintf() calls in C++ binding.
+		<li>eliminate fixed-buffer <code>vsprintf</code> calls in C++ binding.
 
 		<li>add several functions to C++ binding which wrap C functions
 		    that pass a WINDOW* parameter.
@@ -170,13 +170,13 @@ Major bug fixes:
 	    library, in case it is in use, e.g., <code>libncurses.so</code> by
 	    <code>/bin/sh</code>.
 
-	<li>correct check for notimeout() in wgetch().
+	<li>correct check for <code>notimeout</code> in <code>wgetch</code>.
 
-	<li>fix a sign-extension bug in infocmp's repair_acsc() function.
+	<li>fix a sign-extension bug in infocmp's <code>repair_acsc</code> function.
 
-	<li>change winnstr() to stop at the end of the line.
+	<li>change <code>winnstr</code> to stop at the end of the line.
 
-	<li>make Ada95 demo_panels() example work.
+	<li>make Ada95 <code>demo_panels</code> example work.
 
 	<li>fix for adding a non-spacing character at the beginning of a line.
 
@@ -187,35 +187,35 @@ Major bug fixes:
 	    taking into account split characters on left/right window
 	    boundaries.
 
-	<li>modify <code>win_wchnstr()</code> to ensure that only a base cell
+	<li>modify <code>win_wchnstr</code> to ensure that only a base cell
 	    is returned for each multi-column character.
 
-	<li>improve <code>waddch()</code> and <code>winsch()</code> handling of
-	    EILSEQ from <code>mbrtowc()</code> by using <code>unctrl()</code>
+	<li>improve <code>waddch</code> and <code>winsch</code> handling of
+	    EILSEQ from <code>mbrtowc</code> by using <code>unctrl</code>
 	    to display illegal bytes rather than trying to append further bytes
 	    to make up a valid sequence.
 
-	<li>restore <code>curs_set()</code> state after
-	    <code>endwin()</code>/<code>refresh()</code>
+	<li>restore <code>curs_set</code> state after
+	    <code>endwin</code>/<code>refresh</code>
 
-	<li>modify <code>keyname()</code> to use "^X" form only if
-	    <code>meta()</code> has been called, or if <code>keyname()</code>
+	<li>modify <code>keyname</code> to use "^X" form only if
+	    <code>meta</code> has been called, or if <code>keyname</code>
 	    is called without initializing curses, e.g., via
-	    <code>initscr()</code> or <code>newterm()</code>.
+	    <code>initscr</code> or <code>newterm</code>.
 
-	<li>modify <code>unctrl()</code> to check codes in 128-255 range versus
-	    <code>isprint()</code>.
+	<li>modify <code>unctrl</code> to check codes in 128-255 range versus
+	    <code>isprint</code>.
 	    If they are not printable, and locale was set, use a "M-" or "~"
 	    sequence.
 
-	<li>improve <code>resizeterm()</code> by moving ripped-off lines, and
+	<li>improve <code>resizeterm</code> by moving ripped-off lines, and
 	    repainting the soft-keys.
 
 	<li>modify form library to accept control characters such as newline
-	    in set_field_buffer(), which is compatible with Solaris.
+	    in <code>set_field_buffer</code>, which is compatible with Solaris.
 
-	<li>use <code>NCURSES_MOUSE_MASK()</code> in definition of
-	    <code>BUTTON_RELEASE()</code>, etc., to make those work properly
+	<li>use <code>NCURSES_MOUSE_MASK</code> in definition of
+	    <code>BUTTON_RELEASE</code>, etc., to make those work properly
 	    with the <code>--enable-ext-mouse</code> configuration
 
 	<li>correct some functions in Ada95 binding which were using return
@@ -325,14 +325,14 @@ Portability:
 
 	<li>library:
 	<ul>
-	<li>rewrite wrapper for <code>wcrtomb()</code>, making it work on
+	<li>rewrite wrapper for <code>wcrtomb</code>, making it work on
 	    Solaris.  This is used in the form library to determine the length
 	    of the buffer needed by <code>field_buffer</code>.
 	<li>add/use configure script macro CF_SIG_ATOMIC_T, use the corresponding
 	    type for data manipulated by signal handlers.
 	<li>set locale in misc/ncurses-config.in since it uses a range
 	<li>disable GPM mouse support when $TERM does not happen to contain
-	    "linux", since Gpm_Open() no longer limits its assertion to terminals
+	    "linux", since <code>Gpm_Open</code> no longer limits its assertion to terminals
 	    that it might handle, e.g., within "screen" in xterm.
 	<li>reset mouse file-descriptor when unloading GPM library.
 	</ul>
@@ -380,13 +380,13 @@ of the screen if your terminal has an insert-character capability.
 <LI>Support for mouse event reporting with X Window xterm
 and FreeBSD and OS/2 console windows.
 <LI>Extended mouse support via Alessandro Rubini's gpm package.
-<LI>The function <CODE>wresize()</CODE> allows you to resize windows, preserving
+<LI>The function <CODE>wresize</CODE> allows you to resize windows, preserving
 their data.
-<LI>The function <CODE>use_default_colors()</CODE> allows you to
+<LI>The function <CODE>use_default_colors</CODE> allows you to
 use the terminal's default colors for the default color pair,
 achieving the effect of transparent colors.
-<LI>The functions <CODE>keyok()</CODE>
-and <CODE>define_key()</CODE> allow
+<LI>The functions <CODE>keyok</CODE>
+and <CODE>define_key</CODE> allow
 you to better control the use of function keys,
 e.g., disabling the Ncurses KEY_MOUSE,
 or by defining more than one control sequence to map to a given key code.
@@ -593,7 +593,7 @@ Verbatim copying and distribution of this entire article is
 permitted in any medium, provided this notice is preserved.<P>
 Updated:
 <!-- timestamp start -->
-$Date: 2008/11/03 23:50:31 $ $Author: dickey $
+$Date: 2008/11/04 23:43:10 $ $Author: dickey $
 <!-- timestamp end -->
 <HR>
 </BODY>
